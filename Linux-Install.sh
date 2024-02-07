@@ -1,3 +1,9 @@
+# Unlock FS
+fsunlock
+
+# Update apt-get
+sudo apt-get update
+
 # Thin Client VDI Plugin
 wget https://zoom.us/download/vdi/5.17.5.24630/zoomvdi-universal-plugin-thinpro_5.17.5.deb
 chmod 755 zoomvdi-universal-plugin-thinpro_5.17.5.deb
@@ -49,3 +55,6 @@ sudo systemctl start printer-installer-client
 sudo /writable/opt/PrinterInstallerClient/bin/set_home_url.sh https alkeon.printercloud.com
 
 sudo /writable/opt/PrinterInstallerClient/bin/use_authorization_code.sh 99dz5bf9
+
+# Lock FS
+fslock
