@@ -1,6 +1,8 @@
 # Thin Client VDI Plugin
 wget https://zoom.us/download/vdi/5.17.5.24630/zoomvdi-universal-plugin-thinpro_5.17.5.deb
+chmod 755 zoomvdi-universal-plugin-thinpro_5.17.5.deb
 dpkg -i zoomvdi-universal-plugin-thinpro_5.17.5.deb
+rm zoomvdi-universal-plugin-thinpro_5.17.5.deb
 
 # PrinterLogic Pre-reqs
 apt-get install --no-install-recommends --no-install-suggests -y \
@@ -15,13 +17,17 @@ apt-get install --no-install-recommends --no-install-suggests -y \
   net-tools
   
 wget http://security.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi6_3.2.1-8_amd64.deb
+chmod 755 libffi6_3.2.1-8_amd64.deb
 sudo dpkg -i libffi6_3.2.1-8_amd64.deb
 sudo apt-get -f install
+rm libffi6_3.2.1-8_amd64.deb
 
 # PrinterLogic Client
 wget https://printerlogic.printercloud.com/client/setup/printerinstallerclient_amd64.deb
+chmod 755 printerinstallerclient_amd64.deb
 sudo dpkg -i printerinstallerclient_amd64.deb
 sudo apt-get -f install
+rm printerinstallerclient_amd64.deb
 
 sudo systemctl stop printer-installer-client
 sudo killall -s SIGKILL PrinterInstallerClientService
