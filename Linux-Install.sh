@@ -1,10 +1,6 @@
 # Thin Client VDI Plugin
-#wget https://zoom.us/download/vdi/5.17.5.24630/zoomvdi-universal-plugin-thinpro_5.17.5.deb
-#dpkg -i zoomvdi-universal-plugin-thinpro_5.17.5.deb
-
-# Ubuntu VDI Plugin
-wget https://zoom.us/download/vdi/5.17.5.24630/zoomvdi-universal-plugin-ubuntu_5.17.5.deb
-dpkg -i zoomvdi-universal-plugin-ubuntu_5.17.5.deb
+wget https://zoom.us/download/vdi/5.17.5.24630/zoomvdi-universal-plugin-thinpro_5.17.5.deb
+dpkg -i zoomvdi-universal-plugin-thinpro_5.17.5.deb
 
 # PrinterLogic Pre-reqs
 apt-get install --no-install-recommends --no-install-suggests -y \
@@ -40,10 +36,10 @@ sudo killall -s SIGKILL PrinterLogicServiceSNMP
 sudo killall -s SIGKILL PrinterLogicServiceOffNetworkClient
 sudo killall -s SIGKILL PrinterLogicServiceOffNetworkServer
 
-sudo sed -i 's/^\$EXE \&/LD_LIBRARY_PATH="$INSTALL_DIRECTORY\/service_interface\/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}" $EXE \&/' /opt/PrinterInstallerClient/service_interface/run_service.sh
+sudo sed -i 's/^\$EXE \&/LD_LIBRARY_PATH="$INSTALL_DIRECTORY\/service_interface\/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}" $EXE \&/' /writable/opt/PrinterInstallerClient/service_interface/run_service.sh
 
 sudo systemctl start printer-installer-client
 
-sudo /opt/PrinterInstallerClient/bin/set_home_url.sh https alkeon.printercloud.com
+sudo /writable/opt/PrinterInstallerClient/bin/set_home_url.sh https alkeon.printercloud.com
 
-sudo /opt/PrinterInstallerClient/bin/use_authorization_code.sh 99dz5bf9
+sudo /writable/opt/PrinterInstallerClient/bin/use_authorization_code.sh 99dz5bf9
