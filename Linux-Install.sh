@@ -1,6 +1,9 @@
 # Unlock FS
 fsunlock
 
+# Remove comments from sources.list
+sed -i '1,2 s/^##*//' /etc/apt/sources.list
+
 # Update apt-get
 sudo apt-get update
 
@@ -55,6 +58,9 @@ sudo systemctl start printer-installer-client
 sudo /writable/opt/PrinterInstallerClient/bin/set_home_url.sh https alkeon.printercloud.com
 
 sudo /writable/opt/PrinterInstallerClient/bin/use_authorization_code.sh 99dz5bf9
+
+# Add comments back to sources.list
+sed -i '1,2 s/^/#/' /etc/apt/sources.list
 
 # Lock FS
 fslock
