@@ -18,3 +18,6 @@ sed -i '1,2 s/^/#/' /etc/apt/sources.list
 
 # Lock FS
 fslock
+
+# Remove script
+rm ThinClient-ZoomOnly.sh
